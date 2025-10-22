@@ -95,7 +95,7 @@ export function PlayerDetailModal({ player, isOpen, onClose }: PlayerDetailModal
           <div>
             <h3 className="text-sm font-bold text-foreground mb-3">TIERS</h3>
             <div className="grid grid-cols-3 gap-3">
-              {gameModesArray.slice(0, 4).map(([mode, stats]) => (
+              {gameModesArray.map(([mode, stats]) => (
                 <div
                   key={mode}
                   className={`rounded-lg p-3 border ${getTierBgColor(stats.tier, mode)} flex flex-col items-center gap-2`}
@@ -106,26 +106,6 @@ export function PlayerDetailModal({ player, isOpen, onClose }: PlayerDetailModal
               ))}
             </div>
           </div>
-
-          {player.stats.SMP && (
-            <div className="border border-primary/30 rounded-lg p-4 bg-primary/5">
-              <div className="flex items-center gap-3">
-                <div className="text-sm font-bold">SMP</div>
-                <div>
-                  <p className="text-sm font-bold text-foreground">SMP</p>
-                  <p className={`text-xs font-bold ${getTierColor(player.stats.SMP.tier, "SMP")}`}>
-                    {player.stats.SMP.tier}
-                  </p>
-                </div>
-                <div className="ml-auto text-right">
-                  <p className={`text-lg font-bold ${getTierColor(player.stats.SMP.tier, "SMP")}`}>
-                    {player.stats.SMP.points}
-                  </p>
-                  <p className="text-xs text-muted-foreground">pts</p>
-                </div>
-              </div>
-            </div>
-          )}
 
           <Button onClick={onClose} className="w-full bg-primary hover:bg-primary/90 glow-orange-hover">
             Close
