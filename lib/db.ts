@@ -250,15 +250,15 @@ function getDefaultPlayers(): Player[] {
   {
     id: "10",
     name: "Cheeko",
-    overallPoints: 4,
+    overallPoints: 8,
     stats: {
       UHC: {
         tier: "N/A",
         points: 0
       },
       Crystal: {
-        tier: "N/A",
-        points: 0
+        tier: "HT4",
+        points: 4
       },
       Sword: {
         tier: "N/A",
