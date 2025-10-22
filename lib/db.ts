@@ -22,7 +22,7 @@ function getDefaultPlayers(): Player[] {
             Uhc: { tier: "LT2", points: 20 },
 
       }
-    {
+{
 
       id: "2",
 
@@ -35,12 +35,10 @@ function getDefaultPlayers(): Player[] {
             UHC: { tier: "N/A", points: 0 },
             Crystal: { tier: "HT4", points: 4 },
             Sword: { tier: "N/A", points: 0 },
-            Nethpot: { tier: "N/A", points: 0 },
+            Nethpot: { tier: "HT4", points: 4 },,
             SMP: { tier: "N/A", points: 0 },
 
-      },
-
-    },
+      }
 ]
 }
 
