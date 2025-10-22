@@ -17,8 +17,8 @@ export function PlayerDetailModal({ player, isOpen, onClose }: PlayerDetailModal
     if (tier === "N/A") return "text-muted-foreground"
     if (mode === "UHC") return "text-[#ffa500]"
     if (mode === "Crystal") return "text-[#c084fc]"
-    if (mode === "Nethpot") return "text-[#8b0000]" // dark red
-    if (mode === "SMP") return "text-[#ef4444]" // red
+    if (mode === "Nethpot") return "text-[#ff4444]"
+    if (mode === "SMP") return "text-[#ef4444]"
     if (mode === "Sword") return "text-yellow-400"
     if (tier.startsWith("HT")) return "text-primary"
     return "text-yellow-400"
@@ -28,8 +28,8 @@ export function PlayerDetailModal({ player, isOpen, onClose }: PlayerDetailModal
     if (tier === "N/A") return "bg-secondary/50 border-secondary"
     if (mode === "UHC") return "bg-[#ff8c00]/10 border-[#ff8c00]/50"
     if (mode === "Crystal") return "bg-[#9333ea]/10 border-[#9333ea]/50"
-    if (mode === "Nethpot") return "bg-[#8b0000]/10 border-[#8b0000]/50" // dark red
-    if (mode === "SMP") return "bg-[#ef4444]/10 border-[#ef4444]/50" // red
+    if (mode === "Nethpot") return "bg-[#cc2222]/10 border-[#cc2222]/50"
+    if (mode === "SMP") return "bg-[#dc2626]/10 border-[#dc2626]/50"
     if (mode === "Sword") return "bg-yellow-400/10 border-yellow-400/50"
     if (tier.startsWith("HT")) return "bg-primary/10 border-primary/50"
     return "bg-yellow-400/10 border-yellow-400/50"
@@ -72,7 +72,7 @@ export function PlayerDetailModal({ player, isOpen, onClose }: PlayerDetailModal
             </div>
             <div className="text-center">
               <h2 className="text-3xl font-bold text-glow-red">{player.name}</h2>
-              <p className="text-sm text-muted-foreground">Tested</p>
+              <p className="text-sm text-muted-foreground">{player.name}</p>
             </div>
           </div>
 
@@ -95,7 +95,7 @@ export function PlayerDetailModal({ player, isOpen, onClose }: PlayerDetailModal
           <div>
             <h3 className="text-sm font-bold text-foreground mb-3">TIERS</h3>
             <div className="grid grid-cols-3 gap-3">
-              {gameModesArray.slice(0, 4).map(([mode, stats]) => (
+              {gameModesArray.map(([mode, stats]) => (
                 <div
                   key={mode}
                   className={`rounded-lg p-3 border ${getTierBgColor(stats.tier, mode)} flex flex-col items-center gap-2`}
