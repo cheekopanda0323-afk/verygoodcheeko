@@ -12,7 +12,7 @@ export function LeaderboardView() {
   const [players, setPlayers] = useState<Player[]>([])
   const [filteredPlayers, setFilteredPlayers] = useState<Player[]>([])
   const [searchQuery, setSearchQuery] = useState("")
-  const [selectedGameMode, setSelectedGameMode] = useState("SMP")
+  const [selectedGameMode, setSelectedGameMode] = useState("ALL") // ✅ Default to ALL
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -20,7 +20,8 @@ export function LeaderboardView() {
     const fetchPlayers = async () => {
       const allPlayers = await getAllPlayers()
       setPlayers(allPlayers)
-      filterPlayers(allPlayers, selectedGameMode, searchQuery)
+      // ✅ Start by showing all players
+      filterPlayers(allPlayers, "ALL", "")
     }
     fetchPlayers()
   }, [])
@@ -30,13 +31,11 @@ export function LeaderboardView() {
 
     if (query) {
       filtered = filtered.filter((p) => p.name.toLowerCase().includes(query.toLowerCase()))
-    } else {
-      if (gameMode !== "ALL") {
-        filtered = filtered.filter((p) => {
-          const stats = p.stats[gameMode as keyof typeof p.stats]
-          return stats && stats.tier !== "N/A"
-        })
-      }
+    } else if (gameMode !== "ALL") {
+      filtered = filtered.filter((p) => {
+        const stats = p.stats[gameMode as keyof typeof p.stats]
+        return stats && stats.tier !== "N/A"
+      })
     }
 
     filtered.sort((a, b) => b.overallPoints - a.overallPoints)
@@ -128,6 +127,8 @@ export function LeaderboardView() {
                   className={`whitespace-nowrap ${
                     isSelected && mode !== "ALL"
                       ? `${bgColorMap[mode]} hover:opacity-90 text-white ${glowClass}-hover`
+                      : isSelected && mode === "ALL"
+                      ? "bg-primary hover:bg-primary/80 text-white glow-orange-hover"
                       : "bg-secondary/50 hover:bg-secondary text-foreground"
                   }`}
                 >
