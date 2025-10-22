@@ -4,7 +4,7 @@ const STORAGE_KEY = "alivetierlist_players"
 
 function getDefaultPlayers(): Player[] {
   return [
-    {
+{
 
       id: "1",
 
@@ -20,6 +20,23 @@ function getDefaultPlayers(): Player[] {
             Nethpot: { tier: "N/A", points: 0 },
             SMP: { tier: "N/A", points: 0 },
             Uhc: { tier: "LT2", points: 20 },
+
+      }
+    {
+
+      id: "2",
+
+      name: "Cheeko",
+
+      overallPoints: 4,
+
+      stats: {
+
+            UHC: { tier: "N/A", points: 0 },
+            Crystal: { tier: "HT4", points: 4 },
+            Sword: { tier: "N/A", points: 0 },
+            Nethpot: { tier: "N/A", points: 0 },
+            SMP: { tier: "N/A", points: 0 },
 
       },
 
