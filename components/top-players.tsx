@@ -5,6 +5,7 @@ import type { Player } from "@/lib/types"
 import Image from "next/image"
 import { PlayerDetailModal } from "./player-detail-modal"
 import Link from "next/link"
+import { getAllPlayers } from "@/lib/db" // ✅ Import your database function
 
 export function TopPlayers() {
   const [players, setPlayers] = useState<Player[]>([])
@@ -14,15 +15,18 @@ export function TopPlayers() {
   useEffect(() => {
     const fetchPlayers = async () => {
       try {
-        const response = await fetch("/api/players?action=top&limit=5")
-        if (response.ok) {
-          const data = await response.json()
-          setPlayers(data)
-        }
+        // ✅ Fetch data directly from your DB function
+        const data = await getAllPlayers()
+
+        // ✅ Sort players by points in descending order and take top 5
+        const sorted = data.sort((a: Player, b: Player) => b.overallPoints - a.overallPoints).slice(0, 5)
+
+        setPlayers(sorted)
       } catch (error) {
         console.error("[v0] Error fetching top players:", error)
       }
     }
+
     fetchPlayers()
   }, [])
 
