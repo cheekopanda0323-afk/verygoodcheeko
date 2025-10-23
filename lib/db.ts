@@ -277,6 +277,37 @@ function getDefaultPlayers(): Player[] {
         points: 0
       }
     }
+  },
+  {
+    id: "11",
+    name: "araul",
+    overallPoints: 2,
+    stats: {
+      UHC: {
+        tier: "N/A",
+        points: 0
+      },
+      Crystal: {
+        tier: "N/A",
+        points: 0
+      },
+      Sword: {
+        tier: "N/A",
+        points: 0
+      },
+      Nethpot: {
+        tier: "HT5",
+        points: 2
+      },
+      SMP: {
+        tier: "N/A",
+        points: 0
+      },
+      SMPKIT: {
+        tier: "N/A",
+        points: 0
+      }
+    }
   }
 ]
 }
