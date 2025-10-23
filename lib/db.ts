@@ -312,15 +312,15 @@ function getDefaultPlayers(): Player[] {
   {
     id: "12",
     name: "Binni",
-    overallPoints: 4,
+    overallPoints: 1,
     stats: {
       UHC: {
         tier: "N/A",
         points: 0
       },
       Crystal: {
-        tier: "HT4",
-        points: 4
+        tier: "LT5",
+        points: 1
       },
       Sword: {
         tier: "N/A",
