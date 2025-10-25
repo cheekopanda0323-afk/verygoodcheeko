@@ -370,6 +370,37 @@ function getDefaultPlayers(): Player[] {
         points: 0
       }
     }
+  },
+  {
+    id: "14",
+    name: "348k",
+    overallPoints: 6,
+    stats: {
+      UHC: {
+        tier: "LT3",
+        points: 6
+      },
+      CRYSTAL: {
+        tier: "N/A",
+        points: 0
+      },
+      SWORD: {
+        tier: "N/A",
+        points: 0
+      },
+      NETHPOT: {
+        tier: "N/A",
+        points: 0
+      },
+      SMP: {
+        tier: "N/A",
+        points: 0
+      },
+      SMPKIT: {
+        tier: "N/A",
+        points: 0
+      }
+    }
   }
 ]
 }
