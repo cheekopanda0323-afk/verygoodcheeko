@@ -339,6 +339,37 @@ function getDefaultPlayers(): Player[] {
         points: 0
       }
     }
+  },
+  {
+    id: "13",
+    name: "Gr8Bizzo",
+    overallPoints: 3,
+    stats: {
+      UHC: {
+        tier: "N/A",
+        points: 0
+      },
+      Crystal: {
+        tier: "N/A",
+        points: 0
+      },
+      Sword: {
+        tier: "N/A",
+        points: 0
+      },
+      Nethpot: {
+        tier: "LT4",
+        points: 3
+      },
+      SMP: {
+        tier: "N/A",
+        points: 0
+      },
+      SMPKIT: {
+        tier: "N/A",
+        points: 0
+      }
+    }
   }
 ]
 }
