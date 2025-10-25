@@ -248,37 +248,6 @@ function getDefaultPlayers(): Player[] {
     }
   },
   {
-    id: "10",
-    name: "Cheeko",
-    overallPoints: 5,
-    stats: {
-      UHC: {
-        tier: "HT5",
-        points: 2
-      },
-      Crystal: {
-        tier: "N/A",
-        points: 0
-      },
-      Sword: {
-        tier: "N/A",
-        points: 0
-      },
-      Nethpot: {
-        tier: "LT4",
-        points: 3
-      },
-      SMP: {
-        tier: "N/A",
-        points: 0
-      },
-      SMPKIT: {
-        tier: "N/A",
-        points: 0
-      }
-    }
-  },
-  {
     id: "11",
     name: "araul",
     overallPoints: 2,
