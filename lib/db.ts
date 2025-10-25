@@ -279,37 +279,6 @@ function getDefaultPlayers(): Player[] {
     }
   },
   {
-    id: "12",
-    name: "Binni",
-    overallPoints: 1,
-    stats: {
-      UHC: {
-        tier: "N/A",
-        points: 0
-      },
-      Crystal: {
-        tier: "LT5",
-        points: 1
-      },
-      Sword: {
-        tier: "N/A",
-        points: 0
-      },
-      Nethpot: {
-        tier: "N/A",
-        points: 0
-      },
-      SMP: {
-        tier: "N/A",
-        points: 0
-      },
-      SMPKIT: {
-        tier: "N/A",
-        points: 0
-      }
-    }
-  },
-  {
     id: "13",
     name: "Gr8Bizzo",
     overallPoints: 3,
