@@ -432,6 +432,37 @@ function getDefaultPlayers(): Player[] {
         points: 0
       }
     }
+  },
+  {
+    id: "16",
+    name: "Unmuted_AnT",
+    overallPoints: 6,
+    stats: {
+      UHC: {
+        tier: "N/A",
+        points: 0
+      },
+      CRYSTAL: {
+        tier: "N/A",
+        points: 0
+      },
+      SWORD: {
+        tier: "N/A",
+        points: 0
+      },
+      NETHPOT: {
+        tier: "LT3",
+        points: 6
+      },
+      SMP: {
+        tier: "N/A",
+        points: 0
+      },
+      SMPKIT: {
+        tier: "N/A",
+        points: 0
+      }
+    }
   }
 ]
 }
