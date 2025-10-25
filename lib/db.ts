@@ -374,7 +374,7 @@ function getDefaultPlayers(): Player[] {
   {
     id: "14",
     name: "Cheeko",
-    overallPoints: 2,
+    overallPoints: 3,
     stats: {
       UHC: {
         tier: "N/A",
@@ -389,8 +389,8 @@ function getDefaultPlayers(): Player[] {
         points: 0
       },
       NETHPOT: {
-        tier: "HT5",
-        points: 2
+        tier: "LT4",
+        points: 3
       },
       SMP: {
         tier: "N/A",
