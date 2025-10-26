@@ -405,7 +405,7 @@ function getDefaultPlayers(): Player[] {
   {
     id: "15",
     name: "Unmuted_AnT",
-    overallPoints: 4,
+    overallPoints: 10,
     stats: {
       UHC: {
         tier: "N/A",
@@ -420,8 +420,8 @@ function getDefaultPlayers(): Player[] {
         points: 4
       },
       NETHPOT: {
-        tier: "N/A",
-        points: 0
+        tier: "LT3",
+        points: 6
       },
       SMP: {
         tier: "N/A",
