@@ -494,6 +494,37 @@ function getDefaultPlayers(): Player[] {
         points: 3
       }
     }
+  },
+  {
+    id: "18",
+    name: "Y_Cubic_X",
+    overallPoints: 3,
+    stats: {
+      UHC: {
+        tier: "N/A",
+        points: 0
+      },
+      CRYSTAL: {
+        tier: "LT4",
+        points: 3
+      },
+      SWORD: {
+        tier: "N/A",
+        points: 0
+      },
+      NETHPOT: {
+        tier: "N/A",
+        points: 0
+      },
+      SMP: {
+        tier: "N/A",
+        points: 0
+      },
+      SMPKIT: {
+        tier: "N/A",
+        points: 0
+      }
+    }
   }
 ]
 }
