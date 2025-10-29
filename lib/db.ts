@@ -587,6 +587,37 @@ function getDefaultPlayers(): Player[] {
         points: 0
       }
     }
+  },
+  {
+    id: "21",
+    name: "lalaj_gg",
+    overallPoints: 4,
+    stats: {
+      UHC: {
+        tier: "N/A",
+        points: 0
+      },
+      CRYSTAL: {
+        tier: "N/A",
+        points: 0
+      },
+      SWORD: {
+        tier: "N/A",
+        points: 0
+      },
+      NETHPOT: {
+        tier: "N/A",
+        points: 0
+      },
+      SMP: {
+        tier: "N/A",
+        points: 0
+      },
+      SMPKIT: {
+        tier: "HT4",
+        points: 4
+      }
+    }
   }
 ]
 }
