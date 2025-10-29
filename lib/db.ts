@@ -467,7 +467,7 @@ function getDefaultPlayers(): Player[] {
   {
     id: "17",
     name: "Lt4What",
-    overallPoints: 3,
+    overallPoints: 2,
     stats: {
       UHC: {
         tier: "N/A",
@@ -490,8 +490,8 @@ function getDefaultPlayers(): Player[] {
         points: 0
       },
       SMPKIT: {
-        tier: "LT4",
-        points: 3
+        tier: "HT5",
+        points: 2
       }
     }
   },
