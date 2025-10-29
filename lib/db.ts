@@ -556,6 +556,37 @@ function getDefaultPlayers(): Player[] {
         points: 2
       }
     }
+  },
+  {
+    id: "20",
+    name: "shanvi",
+    overallPoints: 4,
+    stats: {
+      UHC: {
+        tier: "N/A",
+        points: 0
+      },
+      CRYSTAL: {
+        tier: "N/A",
+        points: 0
+      },
+      SWORD: {
+        tier: "N/A",
+        points: 0
+      },
+      NETHPOT: {
+        tier: "HT4",
+        points: 4
+      },
+      SMP: {
+        tier: "N/A",
+        points: 0
+      },
+      SMPKIT: {
+        tier: "N/A",
+        points: 0
+      }
+    }
   }
 ]
 }
