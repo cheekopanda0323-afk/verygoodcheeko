@@ -622,15 +622,15 @@ function getDefaultPlayers(): Player[] {
   {
     id: "22",
     name: "sultanplays",
-    overallPoints: 2,
+    overallPoints: 3,
     stats: {
       UHC: {
         tier: "N/A",
         points: 0
       },
       CRYSTAL: {
-        tier: "N/A",
-        points: 0
+        tier: "LT5",
+        points: 1
       },
       SWORD: {
         tier: "N/A",
