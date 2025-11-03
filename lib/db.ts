@@ -591,7 +591,7 @@ function getDefaultPlayers(): Player[] {
   {
     id: "21",
     name: "lalaj_gg",
-    overallPoints: 4,
+    overallPoints: 6,
     stats: {
       UHC: {
         tier: "N/A",
@@ -602,8 +602,8 @@ function getDefaultPlayers(): Player[] {
         points: 0
       },
       SWORD: {
-        tier: "N/A",
-        points: 0
+        tier: "HT5",
+        points: 2
       },
       NETHPOT: {
         tier: "N/A",
