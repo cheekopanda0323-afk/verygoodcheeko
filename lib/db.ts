@@ -684,7 +684,7 @@ function getDefaultPlayers(): Player[] {
   {
     id: "24",
     name: "Ezy_Dino899",
-    overallPoints: 2,
+    overallPoints: 4,
     stats: {
       UHC: {
         tier: "N/A",
@@ -699,8 +699,8 @@ function getDefaultPlayers(): Player[] {
         points: 0
       },
       NETHPOT: {
-        tier: "N/A",
-        points: 0
+        tier: "HT5",
+        points: 2
       },
       SMP: {
         tier: "N/A",
