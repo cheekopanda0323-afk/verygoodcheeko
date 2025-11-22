@@ -1,0 +1,347 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Premium Red Theme - Updated from orange to luxury red */
+  --background: #130003;
+  --foreground: #f5e0dc;
+  --card: #1a0005;
+  --card-foreground: #f5e0dc;
+  --popover: #220008;
+  --popover-foreground: #f5e0dc;
+  --primary: #ff002b;
+  --primary-foreground: #ffffff;
+  --secondary: #2a000d;
+  --secondary-foreground: #f5e0dc;
+  --muted: #4a1a25;
+  --muted-foreground: #d0a0a8;
+  --accent: #d10024;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #3a0010;
+  --input: #0f0002;
+  --ring: #ff002b;
+  --chart-1: #ff002b;
+  --chart-2: #d10024;
+  --chart-3: #8b0017;
+  --chart-4: #ec4899;
+  --chart-5: #f59e0b;
+  --radius: 0.5rem;
+  --sidebar: #130003;
+  --sidebar-foreground: #f5e0dc;
+  --sidebar-primary: #ff002b;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2a000d;
+  --sidebar-accent-foreground: #f5e0dc;
+  --sidebar-border: #3a0010;
+  --sidebar-ring: #ff002b;
+  /* Game mode color palette in red tones */
+  --uhc-orange: #ff0033;
+  --uhc-orange-light: #ff3355;
+  --crystal-purple: #b80040;
+  --crystal-purple-light: #ff1a4d;
+  --nethpot-red: #8b0017;
+  --nethpot-red-light: #cc2244;
+  --smp-red: #d10024;
+  --smp-red-light: #ff0033;
+  --tank-cyan: #c41e3a;
+  --tank-cyan-light: #ff1a47;
+}
+
+.dark {
+  /* Dark mode premium crimson */
+  --background: #130003;
+  --foreground: #f5e0dc;
+  --card: #1a0005;
+  --card-foreground: #f5e0dc;
+  --popover: #220008;
+  --popover-foreground: #f5e0dc;
+  --primary: #ff002b;
+  --primary-foreground: #ffffff;
+  --secondary: #2a000d;
+  --secondary-foreground: #f5e0dc;
+  --muted: #4a1a25;
+  --muted-foreground: #d0a0a8;
+  --accent: #d10024;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #fecaca;
+  --border: #3a0010;
+  --input: #0f0002;
+  --ring: #ff002b;
+  --chart-1: #ff002b;
+  --chart-2: #d10024;
+  --chart-3: #8b0017;
+  --chart-4: #ec4899;
+  --chart-5: #f59e0b;
+  --sidebar: #130003;
+  --sidebar-foreground: #f5e0dc;
+  --sidebar-primary: #ff002b;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2a000d;
+  --sidebar-accent-foreground: #f5e0dc;
+  --sidebar-border: #3a0010;
+  --sidebar-ring: #ff002b;
+  /* Game modes in red palette */
+  --uhc-orange: #ff0033;
+  --uhc-orange-light: #ff3355;
+  --crystal-purple: #b80040;
+  --crystal-purple-light: #ff1a4d;
+  --nethpot-red: #8b0017;
+  --nethpot-red-light: #cc2244;
+  --smp-red: #d10024;
+  --smp-red-light: #ff0033;
+  --tank-cyan: #c41e3a;
+  --tank-cyan-light: #ff1a47;
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    /* Dark red gradient background from #130003 to #3a000a */
+    background: linear-gradient(135deg, #130003 0%, #3a000a 100%);
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Updated red glow effects - neon red with deep crimson accents */
+.glow-orange {
+  box-shadow: 0 0 20px rgba(255, 0, 43, 0.6), 0 0 40px rgba(255, 0, 43, 0.3), inset 0 0 20px rgba(255, 0, 43, 0.1);
+}
+
+.glow-orange-hover:hover {
+  box-shadow: 0 0 30px rgba(255, 0, 43, 0.9), 0 0 60px rgba(255, 0, 43, 0.6), inset 0 0 30px rgba(255, 0, 43, 0.2);
+  transition: all 0.3s ease;
+}
+
+.text-glow-orange {
+  text-shadow: 0 0 10px rgba(255, 0, 43, 0.8), 0 0 20px rgba(255, 0, 43, 0.5);
+}
+
+/* Red gradient borders with glow effect */
+.glow-purple {
+  box-shadow: 0 0 20px rgba(209, 0, 36, 0.6), 0 0 40px rgba(209, 0, 36, 0.3), inset 0 0 20px rgba(209, 0, 36, 0.1);
+}
+
+.glow-purple-hover:hover {
+  box-shadow: 0 0 30px rgba(209, 0, 36, 0.9), 0 0 60px rgba(209, 0, 36, 0.6), inset 0 0 30px rgba(209, 0, 36, 0.2);
+  transition: all 0.3s ease;
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 10px rgba(209, 0, 36, 0.8), 0 0 20px rgba(209, 0, 36, 0.5);
+}
+
+.glow-red {
+  box-shadow: 0 0 20px rgba(255, 0, 43, 0.6), 0 0 40px rgba(255, 0, 43, 0.3), inset 0 0 20px rgba(255, 0, 43, 0.1);
+}
+
+.glow-red-hover:hover {
+  box-shadow: 0 0 30px rgba(255, 0, 43, 0.9), 0 0 60px rgba(255, 0, 43, 0.6), inset 0 0 30px rgba(255, 0, 43, 0.2);
+  transition: all 0.3s ease;
+}
+
+.text-glow-red {
+  text-shadow: 0 0 10px rgba(255, 0, 43, 0.8), 0 0 20px rgba(255, 0, 43, 0.5);
+}
+
+.glow-smp-red {
+  box-shadow: 0 0 20px rgba(209, 0, 36, 0.6), 0 0 40px rgba(209, 0, 36, 0.3), inset 0 0 20px rgba(209, 0, 36, 0.1);
+}
+
+.glow-smp-red-hover:hover {
+  box-shadow: 0 0 30px rgba(209, 0, 36, 0.9), 0 0 60px rgba(209, 0, 36, 0.6), inset 0 0 30px rgba(209, 0, 36, 0.2);
+  transition: all 0.3s ease;
+}
+
+.text-glow-smp-red {
+  text-shadow: 0 0 10px rgba(209, 0, 36, 0.8), 0 0 20px rgba(209, 0, 36, 0.5);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(196, 30, 58, 0.6), 0 0 40px rgba(196, 30, 58, 0.3), inset 0 0 20px rgba(196, 30, 58, 0.1);
+}
+
+.glow-cyan-hover:hover {
+  box-shadow: 0 0 30px rgba(196, 30, 58, 0.9), 0 0 60px rgba(196, 30, 58, 0.6), inset 0 0 30px rgba(196, 30, 58, 0.2);
+  transition: all 0.3s ease;
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(196, 30, 58, 0.8), 0 0 20px rgba(196, 30, 58, 0.5);
+}
+
+/* Enhanced shine effect for glassmorphism cards */
+.shine-effect-players {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.shine-effect-players::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 0, 43, 0.6), 0 0 40px rgba(255, 0, 43, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 0, 43, 0.9), 0 0 60px rgba(255, 0, 43, 0.6);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes border-glow {
+  0%,
+  100% {
+    border-color: rgba(255, 0, 43, 0.5);
+    box-shadow: inset 0 0 10px rgba(255, 0, 43, 0.2);
+  }
+  50% {
+    border-color: rgba(255, 0, 43, 0.8);
+    box-shadow: inset 0 0 20px rgba(255, 0, 43, 0.4), 0 0 20px rgba(255, 0, 43, 0.6);
+  }
+}
+
+/* New particle animation for floating dust effect */
+@keyframes float-particle {
+  0% {
+    opacity: var(--start-opacity);
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh) translateX(var(--drift));
+  }
+}
+
+.particle {
+  position: fixed;
+  pointer-events: none;
+  will-change: transform, opacity;
+  animation: float-particle var(--duration) linear var(--delay) forwards;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out;
+}
+
+.animate-float-up {
+  animation: float-up 0.8s ease-out;
+}
+
+.animate-border-glow {
+  animation: border-glow 2s ease-in-out infinite;
+}
