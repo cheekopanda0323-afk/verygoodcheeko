@@ -1,114 +1,94 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@custom-variant dark (&:is(.dark *));
+/* ------------------------------
+   PREMIUM RED GRADIENT THEME
+------------------------------ */
 
-:root {
-  /* Light Mode – Premium Red */
-  --background: oklch(0.97 0.06 25);
-  --foreground: oklch(0.16 0.09 25);
+@layer base {
+  :root {
+    /* Backgrounds */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
 
-  --card: oklch(0.97 0.06 25);
-  --card-foreground: oklch(0.16 0.09 25);
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
 
-  --popover: oklch(0.97 0.06 25);
-  --popover-foreground: oklch(0.16 0.09 25);
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
 
-  /* Strong premium red */
-  --primary: oklch(0.62 0.20 25);
-  --primary-foreground: oklch(0.98 0.03 25);
+    /* PRIMARY — Luxury Red */
+    --primary: 0 85% 52%;            /* Strong premium red */
+    --primary-foreground: 0 0% 98%;
 
-  /* Light glossy red */
-  --secondary: oklch(0.90 0.07 25);
-  --secondary-foreground: oklch(0.22 0.08 25);
+    /* SECONDARY — Soft Red */
+    --secondary: 0 55% 75%;
+    --secondary-foreground: 0 0% 20%;
 
-  --muted: oklch(0.92 0.05 25);
-  --muted-foreground: oklch(0.48 0.06 25);
+    /* Muted */
+    --muted: 0 45% 92%;
+    --muted-foreground: 0 30% 40%;
 
-  --accent: oklch(0.92 0.05 25);
-  --accent-foreground: oklch(0.22 0.08 25);
+    /* Accent */
+    --accent: 0 65% 80%;
+    --accent-foreground: 0 0% 10%;
 
-  /* Deep destructive red */
-  --destructive: oklch(0.45 0.18 20);
-  --destructive-foreground: oklch(0.98 0.03 25);
+    /* Destructive */
+    --destructive: 0 80% 45%;
+    --destructive-foreground: 0 0% 98%;
 
-  --border: oklch(0.90 0.04 25);
-  --input: oklch(0.90 0.04 25);
-  --ring: oklch(0.75 0.10 25);
+    /* Borders & Shadows */
+    --border: 0 30% 85%;
+    --input: 0 30% 85%;
+    --ring: 0 85% 52%;
 
-  /* Charts – premium red tones */
-  --chart-1: oklch(0.62 0.20 25);
-  --chart-2: oklch(0.55 0.19 20);
-  --chart-3: oklch(0.72 0.16 25);
-  --chart-4: oklch(0.82 0.10 25);
-  --chart-5: oklch(0.88 0.08 25);
+    /* Radius */
+    --radius: 0.5rem;
 
-  --radius: 0.625rem;
+    /* Gradient for backgrounds */
+    --premium-gradient: linear-gradient(135deg,
+      hsl(0, 70%, 55%),
+      hsl(0, 65%, 45%),
+      hsl(0, 80%, 35%)
+    );
+  }
 
-  /* Sidebar Theme */
-  --sidebar: oklch(0.96 0.05 25);
-  --sidebar-foreground: oklch(0.16 0.09 25);
+  /* DARK MODE */
+  .dark {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 96%;
 
-  --sidebar-primary: oklch(0.62 0.20 25);
-  --sidebar-primary-foreground: oklch(0.98 0.03 25);
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
 
-  --sidebar-accent: oklch(0.90 0.07 25);
-  --sidebar-accent-foreground: oklch(0.22 0.08 25);
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
 
-  --sidebar-border: oklch(0.90 0.04 25);
-  --sidebar-ring: oklch(0.75 0.10 25);
+    --primary: 0 85% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 45% 25%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 30% 18%;
+    --muted-foreground: 0 25% 75%;
+
+    --accent: 0 40% 28%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 90% 45%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 25% 20%;
+    --input: 0 25% 20%;
+    --ring: 0 85% 60%;
+  }
 }
 
-.dark {
-  /* Dark Mode – Premium Deep Red */
-  --background: oklch(0.18 0.10 25);
-  --foreground: oklch(0.97 0.03 25);
-
-  --card: oklch(0.18 0.10 25);
-  --card-foreground: oklch(0.97 0.03 25);
-
-  --popover: oklch(0.18 0.10 25);
-  --popover-foreground: oklch(0.97 0.03 25);
-
-  /* Bright premium red foreground */
-  --primary: oklch(0.97 0.03 25);
-  --primary-foreground: oklch(0.22 0.08 25);
-
-  /* Dark glossy red */
-  --secondary: oklch(0.28 0.13 25);
-  --secondary-foreground: oklch(0.97 0.03 25);
-
-  --muted: oklch(0.28 0.13 25);
-  --muted-foreground: oklch(0.70 0.08 25);
-
-  --accent: oklch(0.28 0.13 25);
-  --accent-foreground: oklch(0.97 0.03 25);
-
-  /* Dark destructive red */
-  --destructive: oklch(0.32 0.15 20);
-  --destructive-foreground: oklch(0.97 0.03 25);
-
-  --border: oklch(0.28 0.13 25);
-  --input: oklch(0.28 0.13 25);
-  --ring: oklch(0.45 0.14 25);
-
-  /* Dark red charts */
-  --chart-1: oklch(0.62 0.20 25);
-  --chart-2: oklch(0.55 0.19 20);
-  --chart-3: oklch(0.72 0.16 25);
-  --chart-4: oklch(0.82 0.10 25);
-  --chart-5: oklch(0.88 0.08 25);
-
-  /* Sidebar – dark premium red */
-  --sidebar: oklch(0.22 0.12 25);
-  --sidebar-foreground: oklch(0.97 0.03 25);
-
-  --sidebar-primary: oklch(0.62 0.20 25);
-  --sidebar-primary-foreground: oklch(0.97 0.03 25);
-
-  --sidebar-accent: oklch(0.28 0.13 25);
-  --sidebar-accent-foreground: oklch(0.97 0.03 25);
-
-  --sidebar-border: oklch(0.28 0.13 25);
-  --sidebar-ring: oklch(0.45 0.14 25);
+/* Global background using red gradient */
+body {
+  background: var(--premium-gradient);
 }
