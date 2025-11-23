@@ -808,7 +808,7 @@ function getDefaultPlayers(): Player[] {
   {
     id: "28",
     name: "chiva",
-    overallPoints: 2,
+    overallPoints: 3,
     stats: {
       UHC: {
         tier: "N/A",
@@ -819,8 +819,8 @@ function getDefaultPlayers(): Player[] {
         points: 0
       },
       SWORD: {
-        tier: "HT5",
-        points: 2
+        tier: "LT4",
+        points: 3
       },
       NETHPOT: {
         tier: "N/A",
