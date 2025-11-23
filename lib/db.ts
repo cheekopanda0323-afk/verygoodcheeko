@@ -928,6 +928,37 @@ function getDefaultPlayers(): Player[] {
         points: 0
       }
     }
+  },
+  {
+    id: "32",
+    name: "Sp4rkXD_07",
+    overallPoints: 2,
+    stats: {
+      UHC: {
+        tier: "N/A",
+        points: 0
+      },
+      CRYSTAL: {
+        tier: "N/A",
+        points: 0
+      },
+      SWORD: {
+        tier: "N/A",
+        points: 0
+      },
+      NETHPOT: {
+        tier: "N/A",
+        points: 0
+      },
+      SMP: {
+        tier: "HT5",
+        points: 2
+      },
+      SMPKIT: {
+        tier: "N/A",
+        points: 0
+      }
+    }
   }
 ]
 }
