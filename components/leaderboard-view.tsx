@@ -223,5 +223,26 @@ export function LeaderboardView() {
                         />
                       </div>
 
-
-                    
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-bold text-foreground truncate group-hover:text-primary transition-colors">
+                          {player.name}
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          {displayLabel}: {displayValue}
+                        </p>
+                      </div>
+                    </div>
+                  </button>
+                )
+              })
+            ) : (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground text-lg">No players found</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </>
+  )
+                          }
