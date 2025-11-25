@@ -1145,7 +1145,7 @@ function getDefaultPlayers(): Player[] {
         points: 0
       },
       Crystal: {
-        tier: "HT4",
+        tier: "HT5",
         points: 2
       },
       Sword: {
