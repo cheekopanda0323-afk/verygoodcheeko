@@ -1177,11 +1177,11 @@ function getDefaultPlayers(): Player[] {
   {
     id: "130",
     name: "hwless",
-    overallPoints: 16,
+    overallPoints: 19,
     stats: {
       "Mace PvP": {
-        tier: "N/A",
-        points: 0
+        tier: "LT4",
+        points: 3
       },
       AxePvP: {
         tier: "N/A",
