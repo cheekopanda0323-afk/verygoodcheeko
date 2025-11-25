@@ -1212,6 +1212,45 @@ function getDefaultPlayers(): Player[] {
         points: 0
       }
     }
+  },
+  {
+    id: "131",
+    name: "Betaaj",
+    overallPoints: 3,
+    stats: {
+      "Mace PvP": {
+        tier: "N/A",
+        points: 0
+      },
+      AxePvP: {
+        tier: "N/A",
+        points: 0
+      },
+      SMP: {
+        tier: "N/A",
+        points: 0
+      },
+      DiaSMP: {
+        tier: "N/A",
+        points: 0
+      },
+      UHC: {
+        tier: "N/A",
+        points: 0
+      },
+      Crystal: {
+        tier: "LT4",
+        points: 3
+      },
+      Nethpot: {
+        tier: "N/A",
+        points: 0
+      },
+      Sword: {
+        tier: "N/A",
+        points: 0
+      }
+    }
   }
 ]
 }
