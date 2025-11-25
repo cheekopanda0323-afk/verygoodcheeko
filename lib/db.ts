@@ -1177,7 +1177,7 @@ function getDefaultPlayers(): Player[] {
   {
     id: "130",
     name: "hwless",
-    overallPoints: 12,
+    overallPoints: 16,
     stats: {
       "Mace PvP": {
         tier: "N/A",
@@ -1200,8 +1200,8 @@ function getDefaultPlayers(): Player[] {
         points: 0
       },
       Crystal: {
-        tier: "N/A",
-        points: 0
+        tier: "HT4",
+        points: 4
       },
       Nethpot: {
         tier: "LT3",
