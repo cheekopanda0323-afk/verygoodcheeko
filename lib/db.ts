@@ -1216,7 +1216,7 @@ function getDefaultPlayers(): Player[] {
   {
     id: "131",
     name: "Betaaj",
-    overallPoints: 3,
+    overallPoints: 6,
     stats: {
       "Mace PvP": {
         tier: "N/A",
@@ -1243,8 +1243,8 @@ function getDefaultPlayers(): Player[] {
         points: 3
       },
       Nethpot: {
-        tier: "N/A",
-        points: 0
+        tier: "LT4",
+        points: 3
       },
       Sword: {
         tier: "N/A",
