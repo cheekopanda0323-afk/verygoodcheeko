@@ -7,22 +7,15 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
-// --- NEW COMPONENT FOR CRACKED PLAYERS ---
-// Ye component check karega ke agar skin load nahi hui to random Steve/Alex laga dega
+// --- PLAYER AVATAR COMPONENT (Fixes cracked player images) ---
 const PlayerAvatar = ({ name, className }: { name: string; className?: string }) => {
   const [src, setSrc] = useState(`https://visage.surgeplay.com/bust/512/${name}`)
 
   const handleOnError = () => {
-    // Agar player cracked hai (image error), to hum name ke hisaab se
-    // ek 'Deterministic Random' skin select karenge (taake refresh karne par change na ho)
-    
-    // MHF_Steve and MHF_Alex UUIDs (Official Mojang Placeholders)
+    // Agar image load na ho (cracked player), to Steve ya Alex laga do
     const steveUUID = "c06f89064c8a49119c29ea1dbd1aab82"
     const alexUUID = "606e2ff0ed7748429d6ce1d3321c7838"
-    
-    // Name ki length check karke Steve ya Alex decide karein
     const useSteve = name.length % 2 === 0
-    
     setSrc(`https://visage.surgeplay.com/bust/512/${useSteve ? steveUUID : alexUUID}`)
   }
 
@@ -34,19 +27,17 @@ const PlayerAvatar = ({ name, className }: { name: string; className?: string })
       height={48}
       className={className}
       onError={handleOnError}
-      unoptimized // Ye zaroori hai taake NextJS external url change ko foran reflect kare
+      unoptimized
     />
   )
 }
-// -----------------------------------------
+// -------------------------------------------------------------
 
 export function LeaderboardView() {
   const [players, setPlayers] = useState<Player[]>([])
   const [filteredPlayers, setFilteredPlayers] = useState<Player[]>([])
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedGameMode, setSelectedGameMode] = useState("ALL")
-  // const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null) // Unused variable removed for clean code
-  // const [isModalOpen, setIsModalOpen] = useState(false) // Unused variable
 
   useEffect(() => {
     const fetchPlayers = async () => {
@@ -112,7 +103,6 @@ export function LeaderboardView() {
   }
 
   const handlePlayerClick = (player: Player) => {
-    // Fixed template literal syntax error
     window.location.href = `/${player.name}`
   }
 
@@ -227,24 +217,11 @@ export function LeaderboardView() {
                       </div>
 
                       <div className="relative w-12 h-12 rounded-lg overflow-hidden border border-primary/40 flex-shrink-0 group-hover:border-primary transition-colors">
-                        {/* REPLACED Standard Image with PlayerAvatar */}
-                        <PlayerAvatar 
-                          name={player.name} 
+                        <PlayerAvatar
+                          name={player.name}
                           className="w-full h-full object-cover"
                         />
                       </div>
 
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-bold text-foreground truncate group-hover:text-primary transition-colors">
-                          {player.name}
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          {displayLabel}: {displayValue}
-                        </p>
-                      </div>
-                    </div>
-                  </button>
-                )
-              })
-            ) : (
-      
+
+                    
