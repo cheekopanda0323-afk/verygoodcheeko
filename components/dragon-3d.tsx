@@ -1,129 +1,61 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { Canvas, useFrame } from "@react-three/fiber"
+import { useRef } from "react"
+import { OrbitControls, Stars } from "@react-three/drei"
+import * as THREE from "three"
+
+function DragonModel() {
+  const meshRef = useRef<THREE.Group>(null)
+
+  useFrame((state, delta) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.y += delta * 0.2
+    }
+  })
+
+  // Placeholder geometry for a dragon (simplified)
+  // In a real application, you would load a GLTF model here.
+  return (
+    <group ref={meshRef} position={[0, -2, 0]}>
+      {/* Dragon Body / Neck placeholder */}
+      <mesh position={[0, 3, 0]}>
+        <torusGeometry args={[2, 0.5, 16, 100]} />
+        <meshStandardMaterial color="#1a1a1a" roughness={0.6} metalness={0.8} />
+      </mesh>
+      {/* Dragon Head placeholder */}
+      <mesh position={[0, 5, 2]} rotation={[-0.5, 0, 0]}>
+        <coneGeometry args={[1, 2, 32]} />
+        <meshStandardMaterial color="#0a0a0a" roughness={0.7} metalness={0.9} />
+      </mesh>
+       {/* Red Eye Glow */}
+      <pointLight position={[0.5, 5, 2.5]} color="red" intensity={3} distance={5} />
+      <pointLight position={[-0.5, 5, 2.5]} color="red" intensity={3} distance={5} />
+
+      {/* Spikes/Scales placeholder */}
+      {Array.from({ length: 20 }).map((_, i) => (
+        <mesh key={i} position={[Math.sin(i) * 2.2, 3 + Math.cos(i), Math.cos(i) * 2.2]}>
+          <coneGeometry args={[0.2, 0.8, 8]} />
+          <meshStandardMaterial color="#2a2a2a" />
+        </mesh>
+      ))}
+    </group>
+  )
+}
 
 export function Dragon3D() {
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    let animationFrameId: number
-
-    const canvas = document.createElement("canvas")
-    const rect = containerRef.current?.getBoundingClientRect()
-    canvas.width = rect?.width || 300
-    canvas.height = rect?.height || 300
-
-    containerRef.current?.appendChild(canvas)
-    const ctx = canvas.getContext("2d")!
-
-    let rotation = 0
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-      ctx.save()
-
-      rotation += 1
-      ctx.translate(canvas.width / 2, canvas.height / 2)
-      ctx.rotate((rotation * Math.PI) / 180)
-
-      // Dragon head
-      ctx.fillStyle = "#DC143C"
-      ctx.beginPath()
-      ctx.arc(0, 0, 40, 0, Math.PI * 2)
-      ctx.fill()
-
-      // Dragon horns
-      ctx.strokeStyle = "#8B0000"
-      ctx.lineWidth = 4
-      ctx.beginPath()
-      ctx.moveTo(-20, -35)
-      ctx.lineTo(-35, -55)
-      ctx.stroke()
-      ctx.beginPath()
-      ctx.moveTo(20, -35)
-      ctx.lineTo(35, -55)
-      ctx.stroke()
-
-      // Dragon eyes
-      ctx.fillStyle = "#FFD700"
-      ctx.beginPath()
-      ctx.arc(-15, -10, 6, 0, Math.PI * 2)
-      ctx.fill()
-      ctx.beginPath()
-      ctx.arc(15, -10, 6, 0, Math.PI * 2)
-      ctx.fill()
-
-      // Dragon pupils
-      ctx.fillStyle = "#000000"
-      ctx.beginPath()
-      ctx.arc(-15, -10, 3, 0, Math.PI * 2)
-      ctx.fill()
-      ctx.beginPath()
-      ctx.arc(15, -10, 3, 0, Math.PI * 2)
-      ctx.fill()
-
-      // Dragon jaw
-      ctx.strokeStyle = "#DC143C"
-      ctx.lineWidth = 3
-      ctx.beginPath()
-      ctx.arc(0, 20, 25, 0, Math.PI)
-      ctx.stroke()
-
-      // Dragon neck
-      ctx.strokeStyle = "#DC143C"
-      ctx.lineWidth = 8
-      ctx.beginPath()
-      ctx.moveTo(-10, 40)
-      ctx.bezierCurveTo(-25, 80, -20, 120, -30, 150)
-      ctx.stroke()
-      ctx.beginPath()
-      ctx.moveTo(10, 40)
-      ctx.bezierCurveTo(25, 80, 20, 120, 30, 150)
-      ctx.stroke()
-
-      // Dragon body
-      ctx.fillStyle = "#DC143C"
-      ctx.beginPath()
-      ctx.ellipse(0, 200, 50, 80, 0, 0, Math.PI * 2)
-      ctx.fill()
-
-      // Dragon wings
-      ctx.fillStyle = "#8B0000"
-      ctx.globalAlpha = 0.8
-      ctx.beginPath()
-      ctx.ellipse(-80, 150, 60, 40, -0.3, 0, Math.PI * 2)
-      ctx.fill()
-      ctx.beginPath()
-      ctx.ellipse(80, 150, 60, 40, 0.3, 0, Math.PI * 2)
-      ctx.fill()
-      ctx.globalAlpha = 1
-
-      // Dragon tail
-      ctx.strokeStyle = "#DC143C"
-      ctx.lineWidth = 10
-      ctx.beginPath()
-      ctx.moveTo(0, 280)
-      ctx.bezierCurveTo(50, 350, 100, 380, 80, 450)
-      ctx.stroke()
-
-      // Fire breath effect
-      ctx.fillStyle = "rgba(255, 165, 0, 0.6)"
-      for (let i = 0; i < 5; i++) {
-        ctx.beginPath()
-        ctx.arc(-20 + Math.sin(rotation * 0.05 + i) * 20, -30 - i * 15, 15 - i * 2, 0, Math.PI * 2)
-        ctx.fill()
-      }
-
-      ctx.restore()
-      animationFrameId = requestAnimationFrame(animate)
-    }
-
-    animate()
-
-    return () => {
-      cancelAnimationFrame(animationFrameId)
-      canvas.remove()
-    }
-  }, [])
-
-  return <div ref={containerRef} className="w-full h-full" />
+  return (
+    <div className="w-full h-full bg-black">
+      <Canvas camera={{ position: [0, 5, 10], fov: 60 }}>
+        <color attach="background" args={['#050505']} />
+        <ambientLight intensity={0.3} color="#333" />
+        <pointLight position={[10, 10, 10]} intensity={1.5} color="#ff4444" />
+        <pointLight position={[-10, -10, -10]} intensity={0.5} color="#4444ff" />
+        <spotLight position={[0, 10, 0]} angle={0.3} penumbra={1} intensity={2} castShadow />
+        <Stars radius={100} depth={50} count={2000} factor={4} saturation={0} fade speed={1} />
+        <DragonModel />
+        <OrbitControls enableZoom={false} enablePan={false} minPolarAngle={Math.PI / 4} maxPolarAngle={Math.PI / 1.5} />
+      </Canvas>
+    </div>
+  )
 }
