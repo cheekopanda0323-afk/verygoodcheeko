@@ -1251,6 +1251,45 @@ function getDefaultPlayers(): Player[] {
         points: 3
       }
     }
+  },
+  {
+    id: "132",
+    name: "ObsessedFr",
+    overallPoints: 6,
+    stats: {
+      "Mace PvP": {
+        tier: "LT3",
+        points: 6
+      },
+      AxePvP: {
+        tier: "N/A",
+        points: 0
+      },
+      SMP: {
+        tier: "N/A",
+        points: 0
+      },
+      DiaSMP: {
+        tier: "N/A",
+        points: 0
+      },
+      UHC: {
+        tier: "N/A",
+        points: 0
+      },
+      Crystal: {
+        tier: "N/A",
+        points: 0
+      },
+      Nethpot: {
+        tier: "N/A",
+        points: 0
+      },
+      Sword: {
+        tier: "N/A",
+        points: 0
+      }
+    }
   }
 ]
 }
