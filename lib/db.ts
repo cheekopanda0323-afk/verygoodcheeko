@@ -1446,6 +1446,45 @@ function getDefaultPlayers(): Player[] {
         points: 0
       }
     }
+  },
+  {
+    id: "137",
+    name: "Flme",
+    overallPoints: 2,
+    stats: {
+      "Mace PvP": {
+        tier: "N/A",
+        points: 0
+      },
+      AxePvP: {
+        tier: "N/A",
+        points: 0
+      },
+      SMP: {
+        tier: "N/A",
+        points: 0
+      },
+      DiaSMP: {
+        tier: "N/A",
+        points: 0
+      },
+      UHC: {
+        tier: "N/A",
+        points: 0
+      },
+      Crystal: {
+        tier: "N/A",
+        points: 0
+      },
+      Nethpot: {
+        tier: "HT5",
+        points: 2
+      },
+      Sword: {
+        tier: "N/A",
+        points: 0
+      }
+    }
   }
 ]
 }
