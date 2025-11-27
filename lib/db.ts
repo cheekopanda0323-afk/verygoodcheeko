@@ -1360,7 +1360,7 @@ function getDefaultPlayers(): Player[] {
         points: 0
       },
       Nethpot: {
-        tier: "N/A",
+        tier: "OBSESSEDFR",
         points: 0
       },
       Sword: {
