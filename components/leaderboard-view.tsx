@@ -1,18 +1,18 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react" // Import useCallback
 import { getAllPlayers } from "@/lib/db"
 import type { Player } from "@/lib/types"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { RefreshCw } from "lucide-react" // Install lucide-react if you haven't, or use text
 
-// --- PLAYER AVATAR COMPONENT (Fixes cracked player images) ---
+// ... PlayerAvatar Component (Keep as is) ...
 const PlayerAvatar = ({ name, className }: { name: string; className?: string }) => {
   const [src, setSrc] = useState(`https://visage.surgeplay.com/bust/512/${name}`)
 
   const handleOnError = () => {
-    // Agar image load na ho (cracked player), to Steve ya Alex laga do
     const steveUUID = "c06f89064c8a49119c29ea1dbd1aab82"
     const alexUUID = "606e2ff0ed7748429d6ce1d3321c7838"
     const useSteve = name.length % 2 === 0
@@ -31,23 +31,15 @@ const PlayerAvatar = ({ name, className }: { name: string; className?: string })
     />
   )
 }
-// -------------------------------------------------------------
 
 export function LeaderboardView() {
   const [players, setPlayers] = useState<Player[]>([])
   const [filteredPlayers, setFilteredPlayers] = useState<Player[]>([])
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedGameMode, setSelectedGameMode] = useState("ALL")
+  const [isRefreshing, setIsRefreshing] = useState(false) // State for loading spinner
 
-  useEffect(() => {
-    const fetchPlayers = async () => {
-      const allPlayers = await getAllPlayers()
-      setPlayers(allPlayers)
-      filterPlayers(allPlayers, "ALL", "")
-    }
-    fetchPlayers()
-  }, [])
-
+  // 1. Memoize getTierRank to prevent unnecessary re-renders
   const getTierRank = (tier: string): number => {
     const tierRanks: Record<string, number> = {
       HT1: 100, LT1: 99, HT2: 98, LT2: 97, HT3: 96, LT3: 95,
@@ -56,8 +48,9 @@ export function LeaderboardView() {
     return tierRanks[tier] || 0
   }
 
-  const filterPlayers = (playerList: Player[], gameMode: string, query: string) => {
-    let filtered = playerList
+  // 2. Move filter logic into a useCallback so we can reuse it easily
+  const applyFilters = useCallback((playerList: Player[], gameMode: string, query: string) => {
+    let filtered = [...playerList] // Create a copy
 
     if (query) {
       filtered = filtered.filter((p) => p.name.toLowerCase().includes(query.toLowerCase()))
@@ -90,23 +83,50 @@ export function LeaderboardView() {
       })
     }
     setFilteredPlayers(filtered)
+  }, []) // No dependencies needed for internal helpers if they are pure
+
+  // 3. Create a dedicated fetch function
+  const fetchPlayers = async () => {
+    setIsRefreshing(true)
+    try {
+      const allPlayers = await getAllPlayers()
+      setPlayers(allPlayers)
+      // Apply filters immediately after fetching with current state
+      applyFilters(allPlayers, selectedGameMode, searchQuery)
+    } catch (error) {
+      console.error("Failed to fetch players:", error)
+    } finally {
+      setIsRefreshing(false)
+    }
   }
+
+  // 4. Initial Fetch
+  useEffect(() => {
+    fetchPlayers()
+  }, []) // Empty dependency array ensures this runs once on mount
+
+  // 5. Re-run filters when UI state changes (but don't re-fetch DB)
+  useEffect(() => {
+    applyFilters(players, selectedGameMode, searchQuery)
+  }, [selectedGameMode, searchQuery, players, applyFilters])
 
   const handleGameModeChange = (mode: string) => {
     setSelectedGameMode(mode)
-    filterPlayers(players, mode, searchQuery)
+    // Filter effect will handle the rest
   }
 
   const handleSearch = (query: string) => {
     setSearchQuery(query)
-    filterPlayers(players, selectedGameMode, query)
+    // Filter effect will handle the rest
   }
 
+  // ... (keep helper functions like getGameModeGlowClass, getTopPlayerStyle, handlePlayerClick) ...
   const handlePlayerClick = (player: Player) => {
     window.location.href = `/${player.name}`
   }
 
   const getGameModeGlowClass = (mode: string) => {
+    // ... (Your existing code)
     const glowMap: Record<string, string> = {
       UHC: "glow-orange",
       Crystal: "glow-purple",
@@ -121,6 +141,7 @@ export function LeaderboardView() {
   }
 
   const getTopPlayerStyle = (index: number) => {
+    // ... (Your existing code)
     if (index === 0) {
       return {
         glow: "shadow-lg shadow-[#ffd700]/50 border-[#ffd700]/50",
@@ -153,9 +174,21 @@ export function LeaderboardView() {
     <>
       <div className="min-h-screen bg-background pt-24 pb-12">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="mb-12">
-            <h1 className="text-5xl sm:text-6xl font-bold text-glow-red mb-2">AliveTierList</h1>
-            <p className="text-xl text-muted-foreground">Minecraft Player Rankings</p>
+          <div className="mb-12 flex justify-between items-end">
+            <div>
+              <h1 className="text-5xl sm:text-6xl font-bold text-glow-red mb-2">AliveTierList</h1>
+              <p className="text-xl text-muted-foreground">Minecraft Player Rankings</p>
+            </div>
+            {/* Added Refresh Button */}
+            <Button 
+              onClick={fetchPlayers} 
+              disabled={isRefreshing}
+              variant="outline"
+              className="gap-2"
+            >
+              <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
+              {isRefreshing ? "Refreshing..." : "Refresh Data"}
+            </Button>
           </div>
 
           <div className="mb-8">
@@ -167,6 +200,8 @@ export function LeaderboardView() {
             />
           </div>
 
+          {/* ... Rest of your JSX (Buttons and Map) ... */}
+          
           <div className="flex gap-3 mb-8 overflow-x-auto pb-2">
             {["SMP", "UHC", "Crystal", "Sword", "Nethpot", "DiaSMP", "Mace PvP", "AxePvP", "ALL"].map((mode) => {
               const glowClass = getGameModeGlowClass(mode)
@@ -245,4 +280,4 @@ export function LeaderboardView() {
       </div>
     </>
   )
-                          }
+}
