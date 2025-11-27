@@ -1411,11 +1411,11 @@ function getDefaultPlayers(): Player[] {
   {
     id: "136",
     name: "Unmuted_AnT",
-    overallPoints: 10,
+    overallPoints: 30,
     stats: {
       "Mace PvP": {
-        tier: "N/A",
-        points: 0
+        tier: "LT2",
+        points: 20
       },
       AxePvP: {
         tier: "N/A",
