@@ -14,7 +14,10 @@ export function TopPlayers() {
     const fetchPlayers = async () => {
       try {
         const data = await getAllPlayers()
-        const sorted = data.sort((a: Player, b: Player) => b.overallPoints - a.overallPoints).slice(0, 5)
+        const sorted = data
+          .sort((a: Player, b: Player) => b.overallPoints - a.overallPoints)
+          .slice(0, 5)
+
         setPlayers(sorted)
       } catch (error) {
         console.error("[v0] Error fetching top players:", error)
@@ -55,7 +58,9 @@ export function TopPlayers() {
               >
                 <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
                   <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center glow-orange border border-primary/50 shadow-lg">
-                    <span className="text-lg sm:text-xl md:text-2xl font-black text-white">{index + 1}</span>
+                    <span className="text-lg sm:text-xl md:text-2xl font-black text-white">
+                      {index + 1}
+                    </span>
                   </div>
 
                   <div className="flex-1 flex items-center gap-2 sm:gap-3 md:gap-4 min-w-0">
@@ -73,7 +78,9 @@ export function TopPlayers() {
                       <h3 className="font-black text-sm sm:text-base md:text-lg text-foreground uppercase truncate">
                         {player.name}
                       </h3>
-                      <p className="text-xs text-muted-foreground truncate">{player.name}</p>
+                      <p className="text-xs text-muted-foreground truncate">
+                        {player.name}
+                      </p>
                     </div>
                   </div>
 
@@ -89,7 +96,10 @@ export function TopPlayers() {
           ))}
         </div>
 
-        <div className="mt-8 sm:mt-10 md:mt-12 flex justify-center animate-float-up" style={{ animationDelay: "0.5s" }}>
+        <div
+          className="mt-8 sm:mt-10 md:mt-12 flex justify-center animate-float-up"
+          style={{ animationDelay: "0.5s" }}
+        >
           <Link href="/leaderboard">
             <button className="px-6 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-black text-sm sm:text-base rounded-lg transition-all duration-300 glow-orange-hover border border-primary/50 shadow-lg">
               View All Leaderboard
