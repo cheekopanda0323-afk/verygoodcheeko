@@ -2,43 +2,62 @@
 
 export function Dragon3D() {
   return (
-    <div className="w-full h-full min-h-[350px] bg-[#050505] rounded-xl overflow-hidden relative shadow-xl border border-white/10 flex items-center justify-center">
-      
-      {/* Floating Dragon */}
-      <div className="animate-[float_4s_ease-in-out_infinite]">
+    <div className="w-full h-full min-h-[260px] bg-[#050505] rounded-xl relative flex items-center justify-center border border-red-900/20 shadow-[0_0_20px_rgba(255,0,0,0.25)] overflow-hidden">
+
+      {/* Deadly Dragon Icon */}
+      <div className="animate-[float_3s_ease-in-out_infinite] opacity-95">
         <svg
-          width="180"
-          height="180"
+          width="150"
+          height="150"
           viewBox="0 0 200 200"
-          className="opacity-90 drop-shadow-[0_0_12px_rgba(255,0,0,0.6)]"
+          className="drop-shadow-[0_0_18px_rgba(255,0,0,0.7)]"
         >
+          {/* Sharp, demonic dragon head */}
           <path
-            d="M100 30 C55 50 55 130 100 150 C145 130 145 50 100 30 Z"
-            stroke="#ff2a2a"
+            d="
+              M100 35 
+              C60 60 55 120 100 145
+              C145 120 140 60 100 35
+              L115 60 
+              L140 75 
+              L120 85 
+              L135 100
+              L115 105
+              C110 120 90 120 85 105
+              L65 100 
+              L80 85 
+              L60 75 
+              L85 60 
+              Z
+            "
+            stroke="#ff0000"
             strokeWidth="3"
-            fill="#0d0d0d"
+            fill="#0a0a0a"
           />
 
-          {/* Eyes */}
-          <circle cx="80" cy="90" r="5" fill="#ff3b3b">
-            <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" />
+          {/* Eyes - deadly glow */}
+          <circle cx="85" cy="92" r="5" fill="#ff1a1a">
+            <animate attributeName="opacity" values="1;0.2;1" dur="0.9s" repeatCount="indefinite" />
           </circle>
-          <circle cx="120" cy="90" r="5" fill="#ff3b3b">
-            <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" />
+
+          <circle cx="115" cy="92" r="5" fill="#ff1a1a">
+            <animate attributeName="opacity" values="1;0.2;1" dur="0.9s" repeatCount="indefinite" />
           </circle>
         </svg>
       </div>
 
-      {/* Subtle hologram text */}
-      <div className="absolute bottom-4 left-5 text-red-500/60 text-[10px] font-mono tracking-widest pointer-events-none">
-        <span className="animate-pulse">DRAGON_CORE_ONLINE</span>
+      {/* Deadly message */}
+      <div className="absolute bottom-3 left-4 text-red-600/80 text-[11px] font-mono tracking-widest pointer-events-none">
+        <span className="animate-pulse">
+          CHEEKO IS WATCHING YOU…
+        </span>
       </div>
 
-      {/* CSS animation */}
+      {/* Float animation */}
       <style>{`
         @keyframes float {
           0% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
+          50% { transform: translateY(-7px); }
           100% { transform: translateY(0px); }
         }
       `}</style>
