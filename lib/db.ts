@@ -1136,45 +1136,6 @@ function getDefaultPlayers(): Player[] {
     }
   },
   {
-    id: "32",
-    name: "cheeko",
-    overallPoints: 2,
-    stats: {
-      UHC: {
-        tier: "N/A",
-        points: 0
-      },
-      Crystal: {
-        tier: "HT5",
-        points: 2
-      },
-      Sword: {
-        tier: "N/A",
-        points: 0
-      },
-      Nethpot: {
-        tier: "N/A",
-        points: 0
-      },
-      SMP: {
-        tier: "N/A",
-        points: 0
-      },
-      DiaSMP: {
-        tier: "N/A",
-        points: 0
-      },
-      "Mace PvP": {
-        tier: "N/A",
-        points: 0
-      },
-      AxePvP: {
-        tier: "N/A",
-        points: 0
-      }
-    }
-  },
-  {
     id: "130",
     name: "hwless",
     overallPoints: 25,
