@@ -1446,6 +1446,45 @@ function getDefaultPlayers(): Player[] {
         points: 0
       }
     }
+  },
+  {
+    id: "137",
+    name: "ZynxV5",
+    overallPoints: 2,
+    stats: {
+      UHC: {
+        tier: "N/A",
+        points: 0
+      },
+      SMP: {
+        tier: "N/A",
+        points: 0
+      },
+      AxePvP: {
+        tier: "N/A",
+        points: 0
+      },
+      Crystal: {
+        tier: "N/A",
+        points: 0
+      },
+      "Mace PvP": {
+        tier: "N/A",
+        points: 0
+      },
+      DiaSMP: {
+        tier: "N/A",
+        points: 0
+      },
+      Sword: {
+        tier: "HT5",
+        points: 2
+      },
+      Nethpot: {
+        tier: "N/A",
+        points: 0
+      }
+    }
   }
 ]
 }
