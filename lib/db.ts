@@ -1138,7 +1138,7 @@ function getDefaultPlayers(): Player[] {
   {
     id: "130",
     name: "hwless",
-    overallPoints: 25,
+    overallPoints: 28,
     stats: {
       "Mace PvP": {
         tier: "LT4",
@@ -1157,8 +1157,8 @@ function getDefaultPlayers(): Player[] {
         points: 6
       },
       UHC: {
-        tier: "N/A",
-        points: 0
+        tier: "LT4",
+        points: 3
       },
       Crystal: {
         tier: "HT4",
