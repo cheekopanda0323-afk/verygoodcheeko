@@ -1333,7 +1333,7 @@ function getDefaultPlayers(): Player[] {
   {
     id: "138",
     name: "Vegeta1121",
-    overallPoints: 4,
+    overallPoints: 8,
     stats: {
       "Mace PvP": {
         tier: "N/A",
@@ -1348,8 +1348,8 @@ function getDefaultPlayers(): Player[] {
         points: 0
       },
       DiaSMP: {
-        tier: "N/A",
-        points: 0
+        tier: "HT4",
+        points: 4
       },
       UHC: {
         tier: "N/A",
