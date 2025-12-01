@@ -1485,6 +1485,45 @@ function getDefaultPlayers(): Player[] {
         points: 0
       }
     }
+  },
+  {
+    id: "138",
+    name: "NotUrSHARK",
+    overallPoints: 4,
+    stats: {
+      Sword: {
+        tier: "N/A",
+        points: 0
+      },
+      "Mace PvP": {
+        tier: "N/A",
+        points: 0
+      },
+      Crystal: {
+        tier: "N/A",
+        points: 0
+      },
+      DiaSMP: {
+        tier: "HT4",
+        points: 4
+      },
+      SMP: {
+        tier: "N/A",
+        points: 0
+      },
+      AxePvP: {
+        tier: "N/A",
+        points: 0
+      },
+      UHC: {
+        tier: "N/A",
+        points: 0
+      },
+      Nethpot: {
+        tier: "N/A",
+        points: 0
+      }
+    }
   }
 ]
 }
