@@ -1489,7 +1489,7 @@ function getDefaultPlayers(): Player[] {
   {
     id: "138",
     name: "NotUrSHARK",
-    overallPoints: 4,
+    overallPoints: 2,
     stats: {
       Sword: {
         tier: "N/A",
@@ -1504,8 +1504,8 @@ function getDefaultPlayers(): Player[] {
         points: 0
       },
       DiaSMP: {
-        tier: "HT4",
-        points: 4
+        tier: "HT5",
+        points: 2
       },
       SMP: {
         tier: "N/A",
