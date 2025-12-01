@@ -629,45 +629,6 @@ function getDefaultPlayers(): Player[] {
     }
   },
   {
-    id: "19",
-    name: "NotUrSHARK",
-    overallPoints: 2,
-    stats: {
-      UHC: {
-        tier: "N/A",
-        points: 0
-      },
-      Crystal: {
-        tier: "N/A",
-        points: 0
-      },
-      Sword: {
-        tier: "N/A",
-        points: 0
-      },
-      Nethpot: {
-        tier: "N/A",
-        points: 0
-      },
-      SMP: {
-        tier: "N/A",
-        points: 0
-      },
-      DiaSMP: {
-        tier: "N/A",
-        points: 0
-      },
-      "Mace PvP": {
-        tier: "HT5",
-        points: 2
-      },
-      AxePvP: {
-        tier: "N/A",
-        points: 0
-      }
-    }
-  },
-  {
     id: "20",
     name: "shanvi",
     overallPoints: 4,
