@@ -1528,7 +1528,7 @@ function getDefaultPlayers(): Player[] {
   {
     id: "139",
     name: "sprite",
-    overallPoints: 3,
+    overallPoints: 6,
     stats: {
       Sword: {
         tier: "N/A",
@@ -1547,8 +1547,8 @@ function getDefaultPlayers(): Player[] {
         points: 0
       },
       SMP: {
-        tier: "N/A",
-        points: 0
+        tier: "LT4",
+        points: 3
       },
       AxePvP: {
         tier: "N/A",
