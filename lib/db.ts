@@ -1563,6 +1563,45 @@ function getDefaultPlayers(): Player[] {
         points: 0
       }
     }
+  },
+  {
+    id: "140",
+    name: "CHEEKO_OP",
+    overallPoints: 2,
+    stats: {
+      Nethpot: {
+        tier: "HT5",
+        points: 2
+      },
+      "Mace PvP": {
+        tier: "N/A",
+        points: 0
+      },
+      AxePvP: {
+        tier: "N/A",
+        points: 0
+      },
+      Sword: {
+        tier: "N/A",
+        points: 0
+      },
+      DiaSMP: {
+        tier: "N/A",
+        points: 0
+      },
+      SMP: {
+        tier: "N/A",
+        points: 0
+      },
+      UHC: {
+        tier: "N/A",
+        points: 0
+      },
+      Crystal: {
+        tier: "N/A",
+        points: 0
+      }
+    }
   }
 ]
 }
