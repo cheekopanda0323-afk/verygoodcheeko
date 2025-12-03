@@ -1567,7 +1567,7 @@ function getDefaultPlayers(): Player[] {
   {
     id: "140",
     name: "CHEEKO_OP",
-    overallPoints: 2,
+    overallPoints: 4,
     stats: {
       Nethpot: {
         tier: "HT5",
@@ -1582,8 +1582,8 @@ function getDefaultPlayers(): Player[] {
         points: 0
       },
       Sword: {
-        tier: "N/A",
-        points: 0
+        tier: "HT5",
+        points: 2
       },
       DiaSMP: {
         tier: "N/A",
