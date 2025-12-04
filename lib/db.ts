@@ -1606,7 +1606,7 @@ function getDefaultPlayers(): Player[] {
   {
     id: "141",
     name: "check",
-    overallPoints: 0,
+    overallPoints: 30,
     stats: {
       SMP: {
         tier: "N/A",
@@ -1633,8 +1633,8 @@ function getDefaultPlayers(): Player[] {
         points: 0
       },
       Nethpot: {
-        tier: "HT",
-        points: 0
+        tier: "HT2",
+        points: 30
       },
       AxePvP: {
         tier: "N/A",
