@@ -1606,11 +1606,11 @@ function getDefaultPlayers(): Player[] {
   {
     id: "141",
     name: "check",
-    overallPoints: 2,
+    overallPoints: 3,
     stats: {
       Nethpot: {
-        tier: "N/A",
-        points: 0
+        tier: "LT5",
+        points: 1
       },
       AxePvP: {
         tier: "N/A",
