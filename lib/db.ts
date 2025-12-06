@@ -436,7 +436,7 @@ function getDefaultPlayers(): Player[] {
   {
     id: "14",
     name: "348k",
-    overallPoints: 18,
+    overallPoints: 24,
     stats: {
       UHC: {
         tier: "LT3",
@@ -455,8 +455,8 @@ function getDefaultPlayers(): Player[] {
         points: 0
       },
       SMP: {
-        tier: "N/A",
-        points: 0
+        tier: "LT3",
+        points: 6
       },
       DiaSMP: {
         tier: "LT3",
