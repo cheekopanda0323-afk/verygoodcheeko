@@ -1563,6 +1563,45 @@ function getDefaultPlayers(): Player[] {
         points: 3
       }
     }
+  },
+  {
+    id: "140",
+    name: "348k",
+    overallPoints: 6,
+    stats: {
+      Sword: {
+        tier: "N/A",
+        points: 0
+      },
+      DiaSMP: {
+        tier: "N/A",
+        points: 0
+      },
+      Nethpot: {
+        tier: "N/A",
+        points: 0
+      },
+      "Mace PvP": {
+        tier: "N/A",
+        points: 0
+      },
+      SMP: {
+        tier: "N/A",
+        points: 0
+      },
+      AxePvP: {
+        tier: "N/A",
+        points: 0
+      },
+      UHC: {
+        tier: "LT3",
+        points: 6
+      },
+      Crystal: {
+        tier: "N/A",
+        points: 0
+      }
+    }
   }
 ]
 }
