@@ -1,383 +1,199 @@
+/* Cyberpunk Global CSS Theme */
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
+/* ----------------------------------- */
+/* CYBERPUNK COLOR VARIABLES           */
+/* ----------------------------------- */
 :root {
-  /* Premium Red Theme - Updated from orange to luxury red */
-  --background: #130003;
-  --foreground: #f5e0dc;
-  --card: #1a0005;
-  --card-foreground: #f5e0dc;
-  --popover: #220008;
-  --popover-foreground: #f5e0dc;
-  --primary: #ff002b;
+  --background: #050008;
+  --foreground: #e6e6ff;
+  --card: #0b0014;
+  --card-foreground: #f3eaff;
+  --popover: #0f001b;
+  --popover-foreground: #f3eaff;
+
+  /* Primary cyberpunk neons */
+  --primary: #ff00c8; /* neon magenta */
   --primary-foreground: #ffffff;
-  --secondary: #2a000d;
-  --secondary-foreground: #f5e0dc;
-  --muted: #4a1a25;
-  --muted-foreground: #d0a0a8;
-  --accent: #d10024;
+  --secondary: #00e5ff; /* neon cyan */
+  --secondary-foreground: #001015;
+
+  /* Muted colors */
+  --muted: #2a1a33;
+  --muted-foreground: #bda6cc;
+
+  /* Accent */
+  --accent: #7f00ff; /* violet glow */
   --accent-foreground: #ffffff;
-  --destructive: #ef4444;
+
+  --destructive: #ff0033;
   --destructive-foreground: #ffffff;
-  --border: #3a0010;
-  --input: #0f0002;
-  --ring: #ff002b;
-  --chart-1: #ff002b;
-  --chart-2: #d10024;
-  --chart-3: #8b0017;
-  --chart-4: #ec4899;
-  --chart-5: #f59e0b;
-  --radius: 0.5rem;
-  --sidebar: #130003;
-  --sidebar-foreground: #f5e0dc;
-  --sidebar-primary: #ff002b;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #2a000d;
-  --sidebar-accent-foreground: #f5e0dc;
-  --sidebar-border: #3a0010;
-  --sidebar-ring: #ff002b;
-  /* Game mode color palette in red tones */
-  --uhc-orange: #ff0033;
-  --uhc-orange-light: #ff3355;
-  --crystal-purple: #b80040;
-  --crystal-purple-light: #ff1a4d;
-  --nethpot-red: #8b0017;
-  --nethpot-red-light: #cc2244;
-  --smp-red: #d10024;
-  --smp-red-light: #ff0033;
-  --tank-cyan: #c41e3a;
-  --tank-cyan-light: #ff1a47;
+
+  --border: #33004d;
+  --input: #0a0012;
+  --ring: #ff00c8;
+
+  /* Chart neon palette */
+  --chart-1: #ff00c8;
+  --chart-2: #00e5ff;
+  --chart-3: #7f00ff;
+  --chart-4: #ff0088;
+  --chart-5: #00aaff;
+
+  --radius: 0.65rem;
+
+  /* Sidebar */
+  --sidebar: #06000a;
+  --sidebar-foreground: #e6e6ff;
+  --sidebar-primary: #00e5ff;
+  --sidebar-primary-foreground: #001015;
+  --sidebar-accent: #12001d;
+  --sidebar-accent-foreground: #e6e6ff;
+  --sidebar-border: #33004d;
+  --sidebar-ring: #ff00c8;
 }
 
+/* Dark mode stays neon but slightly deeper */
 .dark {
-  /* Dark mode premium crimson */
-  --background: #130003;
-  --foreground: #f5e0dc;
-  --card: #1a0005;
-  --card-foreground: #f5e0dc;
-  --popover: #220008;
-  --popover-foreground: #f5e0dc;
-  --primary: #ff002b;
-  --primary-foreground: #ffffff;
-  --secondary: #2a000d;
-  --secondary-foreground: #f5e0dc;
-  --muted: #4a1a25;
-  --muted-foreground: #d0a0a8;
-  --accent: #d10024;
-  --accent-foreground: #ffffff;
-  --destructive: #ef4444;
-  --destructive-foreground: #fecaca;
-  --border: #3a0010;
-  --input: #0f0002;
-  --ring: #ff002b;
-  --chart-1: #ff002b;
-  --chart-2: #d10024;
-  --chart-3: #8b0017;
-  --chart-4: #ec4899;
-  --chart-5: #f59e0b;
-  --sidebar: #130003;
-  --sidebar-foreground: #f5e0dc;
-  --sidebar-primary: #ff002b;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #2a000d;
-  --sidebar-accent-foreground: #f5e0dc;
-  --sidebar-border: #3a0010;
-  --sidebar-ring: #ff002b;
-  /* Game modes in red palette */
-  --uhc-orange: #ff0033;
-  --uhc-orange-light: #ff3355;
-  --crystal-purple: #b80040;
-  --crystal-purple-light: #ff1a4d;
-  --nethpot-red: #8b0017;
-  --nethpot-red-light: #cc2244;
-  --smp-red: #d10024;
-  --smp-red-light: #ff0033;
-  --tank-cyan: #c41e3a;
-  --tank-cyan-light: #ff1a47;
+  --background: #030007;
+  --foreground: #f2eaff;
+  --card: #0a0012;
+  --primary: #ff00e6;
+  --secondary: #00d8ff;
+  --accent: #9a00ff;
 }
 
+/* ----------------------------------- */
+/* TAILWIND THEME CONNECTION           */
+/* ----------------------------------- */
 @theme inline {
   --font-sans: "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 2px);
-  --radius-md: var(--radius);
-  --radius-lg: calc(var(--radius) + 2px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* ----------------------------------- */
+/* GLOBAL BASE STYLING                 */
+/* ----------------------------------- */
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
+  * { @apply border-border outline-ring/50; }
+
   body {
-    /* Dark red gradient background from #130003 to #3a000a */
-    background: linear-gradient(135deg, #130003 0%, #3a000a 100%);
+    background: radial-gradient(circle at top, #11001b 0%, #030007 60%);
     @apply bg-background text-foreground;
   }
 }
 
-/* Updated red glow effects - neon red with deep crimson accents */
-.glow-orange {
-  box-shadow: 0 0 20px rgba(255, 0, 43, 0.6), 0 0 40px rgba(255, 0, 43, 0.3), inset 0 0 20px rgba(255, 0, 43, 0.1);
+/* ----------------------------------- */
+/* NEON GLOW CLASSES                   */
+/* ----------------------------------- */
+.glow-magenta {
+  box-shadow: 0 0 20px rgba(255, 0, 200, 0.8), 0 0 50px rgba(255, 0, 200, 0.4);
 }
-
-.glow-orange-hover:hover {
-  box-shadow: 0 0 30px rgba(255, 0, 43, 0.9), 0 0 60px rgba(255, 0, 43, 0.6), inset 0 0 30px rgba(255, 0, 43, 0.2);
-  transition: all 0.3s ease;
-}
-
-.text-glow-orange {
-  text-shadow: 0 0 10px rgba(255, 0, 43, 0.8), 0 0 20px rgba(255, 0, 43, 0.5);
-}
-
-/* Red gradient borders with glow effect */
-.glow-purple {
-  box-shadow: 0 0 20px rgba(209, 0, 36, 0.6), 0 0 40px rgba(209, 0, 36, 0.3), inset 0 0 20px rgba(209, 0, 36, 0.1);
-}
-
-.glow-purple-hover:hover {
-  box-shadow: 0 0 30px rgba(209, 0, 36, 0.9), 0 0 60px rgba(209, 0, 36, 0.6), inset 0 0 30px rgba(209, 0, 36, 0.2);
-  transition: all 0.3s ease;
-}
-
-.text-glow-purple {
-  text-shadow: 0 0 10px rgba(209, 0, 36, 0.8), 0 0 20px rgba(209, 0, 36, 0.5);
-}
-
-.glow-red {
-  box-shadow: 0 0 20px rgba(255, 0, 43, 0.6), 0 0 40px rgba(255, 0, 43, 0.3), inset 0 0 20px rgba(255, 0, 43, 0.1);
-}
-
-.glow-red-hover:hover {
-  box-shadow: 0 0 30px rgba(255, 0, 43, 0.9), 0 0 60px rgba(255, 0, 43, 0.6), inset 0 0 30px rgba(255, 0, 43, 0.2);
-  transition: all 0.3s ease;
-}
-
-.text-glow-red {
-  text-shadow: 0 0 10px rgba(255, 0, 43, 0.8), 0 0 20px rgba(255, 0, 43, 0.5);
-}
-
-.glow-smp-red {
-  box-shadow: 0 0 20px rgba(209, 0, 36, 0.6), 0 0 40px rgba(209, 0, 36, 0.3), inset 0 0 20px rgba(209, 0, 36, 0.1);
-}
-
-.glow-smp-red-hover:hover {
-  box-shadow: 0 0 30px rgba(209, 0, 36, 0.9), 0 0 60px rgba(209, 0, 36, 0.6), inset 0 0 30px rgba(209, 0, 36, 0.2);
-  transition: all 0.3s ease;
-}
-
-.text-glow-smp-red {
-  text-shadow: 0 0 10px rgba(209, 0, 36, 0.8), 0 0 20px rgba(209, 0, 36, 0.5);
+.glow-magenta-hover:hover {
+  box-shadow: 0 0 30px rgba(255, 0, 200, 1), 0 0 70px rgba(255, 0, 200, 0.8);
+  transition: 0.3s ease;
 }
 
 .glow-cyan {
-  box-shadow: 0 0 20px rgba(196, 30, 58, 0.6), 0 0 40px rgba(196, 30, 58, 0.3), inset 0 0 20px rgba(196, 30, 58, 0.1);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.8), 0 0 50px rgba(0, 229, 255, 0.4);
 }
-
 .glow-cyan-hover:hover {
-  box-shadow: 0 0 30px rgba(196, 30, 58, 0.9), 0 0 60px rgba(196, 30, 58, 0.6), inset 0 0 30px rgba(196, 30, 58, 0.2);
-  transition: all 0.3s ease;
+  box-shadow: 0 0 30px rgba(0, 229, 255, 1), 0 0 70px rgba(0, 229, 255, 0.8);
 }
 
-.text-glow-cyan {
-  text-shadow: 0 0 10px rgba(196, 30, 58, 0.8), 0 0 20px rgba(196, 30, 58, 0.5);
+/* ----------------------------------- */
+/* GLITCH ANIMATION                    */
+/* ----------------------------------- */
+@keyframes glitch {
+  0% { clip-path: inset(0 0 0 0); }
+  20% { clip-path: inset(10% 0 40% 0); transform: translate(-2px, -2px); }
+  40% { clip-path: inset(60% 0 5% 0); transform: translate(2px, 2px); }
+  60% { clip-path: inset(20% 0 60% 0); transform: translate(-2px, 1px); }
+  80% { clip-path: inset(0 0 0 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+.glitch {
+  animation: glitch 0.7s infinite;
+  text-shadow: 2px 2px 0 #ff00c8, -2px -2px 0 #00e5ff;
 }
 
-/* Enhanced shine effect for glassmorphism cards */
-.shine-effect-players {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.05) 0%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0.02) 100%
-  );
+/* ----------------------------------- */
+/* HOLOGRAM HOVER                      */
+/* ----------------------------------- */
+.holo-hover {
+  transition: 0.3s;
+  transform-style: preserve-3d;
+}
+.holo-hover:hover {
+  transform: perspective(600px) rotateX(12deg) rotateY(6deg);
+  filter: drop-shadow(0 0 12px var(--primary));
+}
+
+/* ----------------------------------- */
+/* SCANNER BORDER EFFECT               */
+/* ----------------------------------- */
+@keyframes scan {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.border-scan {
   position: relative;
-  backdrop-filter: blur(10px);
+  border: 1px solid var(--primary);
 }
-
-.shine-effect-players::before {
+.border-scan::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  animation: shine 3s infinite;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  background-size: 200% 100%;
+  animation: scan 2s linear infinite;
+  pointer-events: none;
 }
 
-@keyframes shine {
-  0% {
-    left: -100%;
-  }
-  50% {
-    left: 100%;
-  }
-  100% {
-    left: 100%;
-  }
+/* ----------------------------------- */
+/* PARTICLES (NEON SPARKS)             */
+/* ----------------------------------- */
+@keyframes neon-spark {
+  0% { opacity: var(--start-opacity); transform: translateY(0) translateX(0); }
+  100% { opacity: 0; transform: translateY(-100vh) translateX(var(--drift)); }
 }
-
-/* Animations */
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse-glow {
-  0%,
-  100% {
-    box-shadow: 0 0 20px rgba(255, 0, 43, 0.6), 0 0 40px rgba(255, 0, 43, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(255, 0, 43, 0.9), 0 0 60px rgba(255, 0, 43, 0.6);
-  }
-}
-
-@keyframes scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes float-up {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes border-glow {
-  0%,
-  100% {
-    border-color: rgba(255, 0, 43, 0.5);
-    box-shadow: inset 0 0 10px rgba(255, 0, 43, 0.2);
-  }
-  50% {
-    border-color: rgba(255, 0, 43, 0.8);
-    box-shadow: inset 0 0 20px rgba(255, 0, 43, 0.4), 0 0 20px rgba(255, 0, 43, 0.6);
-  }
-}
-
-/* New particle animation for floating dust effect */
-@keyframes float-particle {
-  0% {
-    opacity: var(--start-opacity);
-    transform: translateY(0) translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-100vh) translateX(var(--drift));
-  }
-}
-
-/* Add dragon animation keyframes */
-@keyframes dragon-fly {
-  0% {
-    left: 0%;
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    left: 100%;
-    opacity: 0;
-  }
-}
-
-@keyframes dragon-breathe {
-  0%,
-  100% {
-    transform: scaleX(1);
-  }
-  50% {
-    transform: scaleX(1.2);
-  }
-}
-
 .particle {
   position: fixed;
-  pointer-events: none;
-  will-change: transform, opacity;
-  animation: float-particle var(--duration) linear var(--delay) forwards;
+  width: 3px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--primary);
+  animation: neon-spark var(--duration) linear var(--delay) forwards;
 }
 
-.animate-slide-in-up {
-  animation: slideInUp 0.6s ease-out;
+/* ----------------------------------- */
+/* FUTURISTIC ENTRANCE ANIMATIONS      */
+/* ----------------------------------- */
+@keyframes neon-fade-in {
+  from { opacity: 0; filter: blur(4px); }
+  to { opacity: 1; filter: blur(0); }
+}
+.animate-neon-in {
+  animation: neon-fade-in 0.6s ease-out;
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+@keyframes slide-up-neon {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
-
-.animate-scale-in {
-  animation: scale-in 0.5s ease-out;
-}
-
-.animate-float-up {
-  animation: float-up 0.8s ease-out;
-}
-
-.animate-border-glow {
-  animation: border-glow 2s ease-in-out infinite;
-}
-
-.animate-dragon-fly {
-  animation: dragon-fly 8s linear infinite;
-}
-
-.animate-dragon-breathe {
-  animation: dragon-breathe 1.5s ease-in-out infinite;
+.animate-slide-up-neon {
+  animation: slide-up-neon 0.7s ease-out;
 }
