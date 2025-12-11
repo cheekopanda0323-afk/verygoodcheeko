@@ -5,9 +5,9 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ----------------------------------- */
-/* CYBERPUNK COLOR VARIABLES           */
-/* ----------------------------------- */
+/* -----------------------------------
+ * CYBERPUNK COLOR VARIABLES           
+ * ----------------------------------- */
 :root {
   --background: #050008;
   --foreground: #e6e6ff;
@@ -67,9 +67,9 @@
   --accent: #9a00ff;
 }
 
-/* ----------------------------------- */
-/* TAILWIND THEME CONNECTION           */
-/* ----------------------------------- */
+/* -----------------------------------
+ * TAILWIND THEME CONNECTION           
+ * ----------------------------------- */
 @theme inline {
   --font-sans: "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
@@ -83,21 +83,24 @@
   --color-border: var(--border);
 }
 
-/* ----------------------------------- */
-/* GLOBAL BASE STYLING                 */
-/* ----------------------------------- */
+/* -----------------------------------
+ * GLOBAL BASE STYLING                 
+ * ----------------------------------- */
 @layer base {
-  * { @apply border-border outline-ring/50; }
+  * {
+    border-color: var(--border);
+  }
 
   body {
     background: radial-gradient(circle at top, #11001b 0%, #030007 60%);
-    @apply bg-background text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
   }
 }
 
-/* ----------------------------------- */
-/* NEON GLOW CLASSES                   */
-/* ----------------------------------- */
+/* -----------------------------------
+ * NEON GLOW CLASSES                   
+ * ----------------------------------- */
 .glow-magenta {
   box-shadow: 0 0 20px rgba(255, 0, 200, 0.8), 0 0 50px rgba(255, 0, 200, 0.4);
 }
@@ -113,25 +116,40 @@
   box-shadow: 0 0 30px rgba(0, 229, 255, 1), 0 0 70px rgba(0, 229, 255, 0.8);
 }
 
-/* ----------------------------------- */
-/* GLITCH ANIMATION                    */
-/* ----------------------------------- */
+/* -----------------------------------
+ * GLITCH ANIMATION                    
+ * ----------------------------------- */
 @keyframes glitch {
-  0% { clip-path: inset(0 0 0 0); }
-  20% { clip-path: inset(10% 0 40% 0); transform: translate(-2px, -2px); }
-  40% { clip-path: inset(60% 0 5% 0); transform: translate(2px, 2px); }
-  60% { clip-path: inset(20% 0 60% 0); transform: translate(-2px, 1px); }
-  80% { clip-path: inset(0 0 0 0); }
-  100% { clip-path: inset(0 0 0 0); }
+  0% {
+    clip-path: inset(0 0 0 0);
+  }
+  20% {
+    clip-path: inset(10% 0 40% 0);
+    transform: translate(-2px, -2px);
+  }
+  40% {
+    clip-path: inset(60% 0 5% 0);
+    transform: translate(2px, 2px);
+  }
+  60% {
+    clip-path: inset(20% 0 60% 0);
+    transform: translate(-2px, 1px);
+  }
+  80% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
 }
 .glitch {
   animation: glitch 0.7s infinite;
   text-shadow: 2px 2px 0 #ff00c8, -2px -2px 0 #00e5ff;
 }
 
-/* ----------------------------------- */
-/* HOLOGRAM HOVER                      */
-/* ----------------------------------- */
+/* -----------------------------------
+ * HOLOGRAM HOVER                      
+ * ----------------------------------- */
 .holo-hover {
   transition: 0.3s;
   transform-style: preserve-3d;
@@ -141,12 +159,16 @@
   filter: drop-shadow(0 0 12px var(--primary));
 }
 
-/* ----------------------------------- */
-/* SCANNER BORDER EFFECT               */
-/* ----------------------------------- */
+/* -----------------------------------
+ * SCANNER BORDER EFFECT               
+ * ----------------------------------- */
 @keyframes scan {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 .border-scan {
   position: relative;
@@ -162,12 +184,18 @@
   pointer-events: none;
 }
 
-/* ----------------------------------- */
-/* PARTICLES (NEON SPARKS)             */
-/* ----------------------------------- */
+/* -----------------------------------
+ * PARTICLES (NEON SPARKS)             
+ * ----------------------------------- */
 @keyframes neon-spark {
-  0% { opacity: var(--start-opacity); transform: translateY(0) translateX(0); }
-  100% { opacity: 0; transform: translateY(-100vh) translateX(var(--drift)); }
+  0% {
+    opacity: var(--start-opacity);
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh) translateX(var(--drift));
+  }
 }
 .particle {
   position: fixed;
@@ -179,21 +207,33 @@
   animation: neon-spark var(--duration) linear var(--delay) forwards;
 }
 
-/* ----------------------------------- */
-/* FUTURISTIC ENTRANCE ANIMATIONS      */
-/* ----------------------------------- */
+/* -----------------------------------
+ * FUTURISTIC ENTRANCE ANIMATIONS      
+ * ----------------------------------- */
 @keyframes neon-fade-in {
-  from { opacity: 0; filter: blur(4px); }
-  to { opacity: 1; filter: blur(0); }
+  from {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
 }
 .animate-neon-in {
   animation: neon-fade-in 0.6s ease-out;
 }
 
 @keyframes slide-up-neon {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 .animate-slide-up-neon {
   animation: slide-up-neon 0.7s ease-out;
-}
+  }
