@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 
-export default function Batman3D() {
+export function Dragon3D() {
   const containerRef = useRef(null)
 
   useEffect(() => {
@@ -294,4 +294,4 @@ export default function Batman3D() {
       </div>
     </div>
   )
-  }
+        }
