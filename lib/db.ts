@@ -1058,45 +1058,6 @@ function getDefaultPlayers(): Player[] {
     }
   },
   {
-    id: "130",
-    name: "hwless",
-    overallPoints: 32,
-    stats: {
-      "Mace PvP": {
-        tier: "LT4",
-        points: 3
-      },
-      AxePvP: {
-        tier: "LT4",
-        points: 3
-      },
-      SMP: {
-        tier: "LT3",
-        points: 6
-      },
-      DiaSMP: {
-        tier: "LT3",
-        points: 6
-      },
-      UHC: {
-        tier: "HT5",
-        points: 2
-      },
-      Crystal: {
-        tier: "HT4",
-        points: 4
-      },
-      Nethpot: {
-        tier: "LT3",
-        points: 6
-      },
-      Sword: {
-        tier: "HT5",
-        points: 2
-      }
-    }
-  },
-  {
     id: "131",
     name: "Betaaj",
     overallPoints: 9,
