@@ -1602,6 +1602,45 @@ function getDefaultPlayers(): Player[] {
         points: 0
       }
     }
+  },
+  {
+    id: "141",
+    name: "AnuragHax",
+    overallPoints: 10,
+    stats: {
+      SMP: {
+        tier: "N/A",
+        points: 0
+      },
+      DiaSMP: {
+        tier: "N/A",
+        points: 0
+      },
+      "Mace PvP": {
+        tier: "N/A",
+        points: 0
+      },
+      Crystal: {
+        tier: "N/A",
+        points: 0
+      },
+      Sword: {
+        tier: "N/A",
+        points: 0
+      },
+      UHC: {
+        tier: "N/A",
+        points: 0
+      },
+      Nethpot: {
+        tier: "HT3",
+        points: 10
+      },
+      AxePvP: {
+        tier: "N/A",
+        points: 0
+      }
+    }
   }
 ]
 }
